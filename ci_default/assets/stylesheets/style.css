@@ -1,0 +1,22 @@
+.note
+{
+	width: 10em;
+	height: 10em;
+	border-top: 1px solid gray;
+	display: inline-block;
+}
+.scroll
+{
+	overflow: auto;
+}
+.note h3
+{
+	display: inline-block;
+}
+.delete
+{
+	display: inline-block;
+	background-color: white;
+	border: none;
+	color: blue;
+}
