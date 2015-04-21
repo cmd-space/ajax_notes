@@ -20,3 +20,9 @@
 	border: none;
 	color: blue;
 }
+#add 
+{
+	background-color: blue;
+	color: white;
+	border-radius: .5em;
+}

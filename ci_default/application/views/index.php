@@ -26,6 +26,15 @@
 					this.value = 'insert note title here...'
 				}
 			});
+			$('.scroll').click(function()
+			{
+				var otext = this.text();
+				$('p').replaceWith('<textarea>'+otext+'</textarea>');
+			});
+			$('h3').click(function()
+			{
+				$('h3').html('<button>hello</button>');
+			});
 		});
 	</script>
 </head>
