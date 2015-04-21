@@ -3,14 +3,22 @@
 	{
 ?>
 <script>
-	// $(document).ready(function()
-	// {
-	// 	$('.scroll').click(function()
-	// 		{
-	// 			var otext = this.text();
-	// 			this.replaceWith('<textarea>'+otext+'</textarea>');
-	// 		});
-	// });
+	$('.delete').submit(function()
+	{
+		$.post($(this).attr('action'), $(this).serialize(), function(res)
+		{
+			$('#notes').html(res);
+		});
+		return false;
+	});
+	$('.update').submit(function()
+	{
+		$.post($(this).attr('action'), $(this).serialize(), function(res)
+		{
+			$('#notes').html(res);
+		});
+		return false;
+	});
 </script>
 		<div class='note'>
 			<h3><?= $note['title'] ?></h3>

@@ -42,7 +42,7 @@ class Notes extends CI_Controller {
   	elseif($this->input->post('title'))
   	{
   		$desc['title'] = $this->input->post('title');
-  		$this->Note->update_title($id, $desc);
+  		$this->Note->update_title($id, $desc['title']);
   	}
   	elseif($this->input->post('desc'))
   	{

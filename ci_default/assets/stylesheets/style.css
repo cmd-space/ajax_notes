@@ -12,6 +12,7 @@
 .note h3
 {
 	display: inline-block;
+	max-width: 5em;
 }
 .delete
 {

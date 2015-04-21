@@ -14,12 +14,20 @@
 			});
 			$('#add_note').submit(function()
 			{
-				$.post('/notes/create', function(res)
+				$.post('/notes/create', $(this).serialize(), function(res)
 				{
 					$('#notes').html(res);
 				});
 				return false;
 			});
+			// $('.delete').submit(function()
+			// {
+			// 	$.post($(this).attr('action'), $(this).serialize(), function(res)
+			// 	{
+			// 		$('#notes').html(res);
+			// 	});
+			// 	return false;
+			// });
 			$('#title').focus(function()
 			{
 				if(this.value == 'insert note title here...')
