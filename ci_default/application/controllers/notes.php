@@ -1,6 +1,12 @@
 <?php if ( ! defined('BASEPATH')) exit('No direct script access allowed');
 
 class Notes extends CI_Controller {
+  public function __construct()
+  {
+  	parent::__construct();
+  	$this->load->model('Note');
+  }
+
   public function index_html()
   {
   	$this->load->model('Note');
@@ -41,7 +47,7 @@ class Notes extends CI_Controller {
   	elseif($this->input->post('desc'))
   	{
   		$desc['description'] = $this->input->post('desc');
-  		$this->Note->update_desc($id, $desc);
+  		$this->Note->update_desc($id, $desc['description']);
   	}
   	
   	redirect('/');

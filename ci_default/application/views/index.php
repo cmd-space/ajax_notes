@@ -12,6 +12,14 @@
 			{
 				$('#notes').html(res);
 			});
+			$('#add_note').submit(function()
+			{
+				$.post('/notes/create', function(res)
+				{
+					$('#notes').html(res);
+				});
+				return false;
+			});
 			$('#title').focus(function()
 			{
 				if(this.value == 'insert note title here...')
@@ -41,7 +49,7 @@
 <body>
 	<h4>Notes</h4>
 	<div id='notes'></div>
-	<form action="notes/create" method="post">
+	<form action="notes/create" id="add_note" method="post">
 		<p><input type="text" name='title' id='title' value='insert note title here...'></p>
 		<p><input type="submit" id='add' value="Add Note"></p>
 	</form>
