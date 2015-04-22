@@ -19,14 +19,16 @@ class Notes extends CI_Controller {
   	$this->load->model('Note');
   	$note = $this->input->post();
   	$this->Note->create($note);
-  	redirect('/');
+  	$data['notes'] = $this->Note->all();
+   	$this->load->view('partials/notes', $data);
   }
 
   public function destroy($id)
   {
   	$this->load->model('Note');
   	$this->Note->destroy($id);
-  	redirect('/');
+  	$data['notes'] = $this->Note->all();
+   	$this->load->view('partials/notes', $data);
   }
 
   public function update($id)
@@ -49,14 +51,12 @@ class Notes extends CI_Controller {
   		$desc['description'] = $this->input->post('desc');
   		$this->Note->update_desc($id, $desc['description']);
   	}
-  	
-  	redirect('/');
+  	$data['notes'] = $this->Note->all();
+   	$this->load->view('partials/notes', $data);
   }
 
   public function index()
   {
-  	$this->output->enable_profiler(TRUE);
-    $this->load->model('Note');
     $this->load->view('index');
   }
 }

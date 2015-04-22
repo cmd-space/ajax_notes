@@ -12,22 +12,13 @@
 			{
 				$('#notes').html(res);
 			});
-			$('#add_note').submit(function()
-			{
-				$.post('/notes/create', $(this).serialize(), function(res)
+			$(document).on('submit', 'form', function() {
+				$.post($(this).attr('action'), $(this).serialize(), function(res)
 				{
 					$('#notes').html(res);
 				});
 				return false;
-			});
-			// $('.delete').submit(function()
-			// {
-			// 	$.post($(this).attr('action'), $(this).serialize(), function(res)
-			// 	{
-			// 		$('#notes').html(res);
-			// 	});
-			// 	return false;
-			// });
+			})
 			$('#title').focus(function()
 			{
 				if(this.value == 'insert note title here...')
